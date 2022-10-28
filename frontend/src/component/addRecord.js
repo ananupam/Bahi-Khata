@@ -5,6 +5,13 @@ import { addRecord } from '../functionalities/FormFunction';
 import moment from 'moment';
 import InputLabel from '@material-ui/core/InputLabel';
 
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
 const AddRecord = React.memo((props) => {
     const [date, setDate] = useState(new Date());
     const [category, setCategory]= useState('');
