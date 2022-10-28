@@ -3,14 +3,13 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addRecord } from '../functionalities/FormFunction';
 import moment from 'moment';
-import InputLabel from '@material-ui/core/InputLabel';
 
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import Select from '@material-ui/core/Select';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 const AddRecord = React.memo((props) => {
     const [date, setDate] = useState(new Date());
@@ -86,3 +85,15 @@ const AddRecord = React.memo((props) => {
     )
 
 });
+
+const mapStateToProps = (state) => ({
+	records: state.records,
+	categories: state.categories,
+});
+
+const mapDispatchToProps = {
+	addRecord,
+	//changeChartVisibility,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddRecord);
