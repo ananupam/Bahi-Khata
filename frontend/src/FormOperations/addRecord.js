@@ -81,6 +81,7 @@ const AddRecord = React.memo((props) => {
                 </div>
                 </form>
             </div>
+            {/* to add the  monthly graph*/}
         </div>
     )
 
