@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addRecord } from '../functionalities/FormFunction';
 import moment from 'moment';
+import InputLabel from '@material-ui/core/InputLabel';
 
 const AddRecord = React.memo((props) => {
     const [date, setDate] = useState(new Date());
@@ -19,5 +20,13 @@ const AddRecord = React.memo((props) => {
         };
         props.addRecord(record);
         //console.log("record added")
+
+        //empty all fields
+        e.target.amount.value='';
+        e.target.date.value= '';
+        setCategory('');
+        e.target.description.InputLabelProps = {
+            shrink: false,
+        }
     }
 });
