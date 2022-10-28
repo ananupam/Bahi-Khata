@@ -14,3 +14,9 @@ const DeleteRecord = React.memo((props) => {
 
 })
 
+const mapDispatchToProps = {
+	deleteRecord,
+};
+
+export default connect(null, mapDispatchToProps)(DeleteRecord);
+
