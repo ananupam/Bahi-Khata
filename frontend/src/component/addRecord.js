@@ -27,6 +27,54 @@ const AddRecord = React.memo((props) => {
         setCategory('');
         e.target.description.InputLabelProps = {
             shrink: false,
-        }
-    }
+        };
+        
+    };
+
+    //addition
+
+    return(
+        <div className='addRecord'>
+            <div>
+
+                <form className='addRecordForm' onSubmit={handleRecordAdding}>
+                <h2> ADD RECORD</h2>
+                
+                <div className='formDescription_body'>
+                    <TextField id="Amount" label="Amount"
+                     variant="standard" type="number" name="Amount"/>
+
+                    <TextField id="Date" label="Date"
+                     variant="standard" type="number" name="Date"
+                     value={moment(date).format('yyyy-MM-DD')}
+					 onChange={(event) => setDate(event.target.value)}/>
+
+                    <FormControl className="form_formcontrol">
+                        <InputLabel id='demo-simple-select-label'></InputLabel>
+                        <Select labelId='demo-simple-select-label'
+						id='demo-simple-select' value={category}
+                        onChange={(event) => {
+                            setCategory(event.target.value);
+                        }}>
+                            {props.categories.map((category) => (
+                                <MenuItem value={category.category} key={category.id}>{category.category} </MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
+                </div>
+
+
+                <div className='formDescription_description'>
+                    <TextField id="Description" label="Description"
+                     variant="standard" type="text" name="Description"/>
+                </div>
+
+                <div className='appendRecordBtn'>
+                    <Button type='submit'>ADD RECORD </Button>
+                </div>
+                </form>
+            </div>
+        </div>
+    )
+
 });
