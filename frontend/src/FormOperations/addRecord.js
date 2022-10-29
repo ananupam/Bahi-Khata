@@ -16,7 +16,10 @@ const AddRecord = React.memo((props) => {
     const [category, setCategory]= useState('');
 
     const handleRecordAdding = (e) =>{
+        console.log("adding record")
+        console.log(props)
         e.preventDefault();
+        
         const record = {
             id: props.records[props.records.length -1].id +1,
             description: e.target.description.value,
@@ -25,12 +28,14 @@ const AddRecord = React.memo((props) => {
             date: e.target.date.value,
         };
         props.addRecord(record);
-        //console.log("record added")
+        console.log("record added")
 
         //empty all fields
         e.target.amount.value='';
         e.target.date.value= '';
         setCategory('');
+        e.target.description.value = null;
+        
         //e.target.description.InputLabelProps = {
             //shrink: false,
         //};
@@ -48,19 +53,23 @@ const AddRecord = React.memo((props) => {
                 
                 <div className='formDescription_body'>
                     <TextField id="Amount" label="Amount"
-                     variant="standard" type="number" name="Amount"/>
+                     variant="standard" type="number" name="amount"/>
 
                     <TextField id="Date" label="Date"
-                     variant="standard" type="number" name="Date"
+                     variant="standard" type="date" name="Date"
                      value={moment(date).format('yyyy-MM-DD')}
-					 onChange={(event) => setDate(event.target.value)}/>
+					 onChange={(e) => setDate(e.target.value)}
+                     InputLabelProps={{
+                        shrink: true,
+                    }}
+                    style={{ width: '30%' }}/>
 
-                    <FormControl className="form_formcontrol">
-                        <InputLabel id='demo-simple-select-label'></InputLabel>
+                    <FormControl className="form_formcontrol" style={{ width: '30%' }}>
+                        <InputLabel id='demo-simple-select-label' variant="standard">Category</InputLabel>
                         <Select labelId='demo-simple-select-label'
 						id='demo-simple-select' value={category}
-                        onChange={(event) => {
-                            setCategory(event.target.value);
+                        onChange={(e) => {
+                            setCategory(e.target.value);
                         }}>
                             {/*{props.categories.map((category) => (
                                 <MenuItem value={category.category} key={category.id}>

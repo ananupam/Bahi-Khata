@@ -7,7 +7,6 @@ const Main = React.memo((props) => {
     return(
         <React.Fragment>
             <div>
-                <h1> in the main</h1>
                 <AddRecord/>
             </div>
         </React.Fragment>
