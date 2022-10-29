@@ -7,7 +7,8 @@ const Main = React.memo((props) => {
     return(
         <React.Fragment>
             <div>
-                <AddRecord style={{ flex: 1.25, margin: 10 }}/>
+                <h1> in the main</h1>
+                <AddRecord/>
             </div>
         </React.Fragment>
     );

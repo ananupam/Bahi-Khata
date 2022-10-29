@@ -23,3 +23,13 @@ export const editRecord = (id, newRecord) => {
         newRecord,
     };
 };
+
+
+export const filter_options = 'filter_options';
+export const filterOptions = (categories) => {
+    return {
+        type: filter_options,
+        categories,
+    };
+};
+

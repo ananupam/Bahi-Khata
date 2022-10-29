@@ -6,8 +6,8 @@ import Main from './pages/Main';
 const App = React.memo(() => {
 	return (
 		<div>
-      <h1>hello</h1>
-			<Main />
+      	<h1>hello</h1>
+	  	<Main></Main>
 		</div>
 	);
 });

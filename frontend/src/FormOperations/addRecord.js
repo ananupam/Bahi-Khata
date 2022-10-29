@@ -31,9 +31,9 @@ const AddRecord = React.memo((props) => {
         e.target.amount.value='';
         e.target.date.value= '';
         setCategory('');
-        e.target.description.InputLabelProps = {
-            shrink: false,
-        };
+        //e.target.description.InputLabelProps = {
+            //shrink: false,
+        //};
         
     };
 
@@ -63,7 +63,8 @@ const AddRecord = React.memo((props) => {
                             setCategory(event.target.value);
                         }}>
                             {props.categories.map((category) => (
-                                <MenuItem value={category.category} key={category.id}>{category.category} </MenuItem>
+                                <MenuItem value={category.category} key={category.id}>
+                                {category.category} </MenuItem>
                             ))}
                         </Select>
                     </FormControl>
