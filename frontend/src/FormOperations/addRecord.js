@@ -62,10 +62,10 @@ const AddRecord = React.memo((props) => {
                         onChange={(event) => {
                             setCategory(event.target.value);
                         }}>
-                            {props.categories.map((category) => (
+                            {/*{props.categories.map((category) => (
                                 <MenuItem value={category.category} key={category.id}>
                                 {category.category} </MenuItem>
-                            ))}
+                            ))}*/}
                         </Select>
                     </FormControl>
                 </div>

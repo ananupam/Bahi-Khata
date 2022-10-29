@@ -25,10 +25,10 @@ export const editRecord = (id, newRecord) => {
 };
 
 
-export const filter_options = 'filter_options';
-export const filterOptions = (categories) => {
+export const filter_record = 'filter_record';
+export const filterRecord = (categories) => {
     return {
-        type: filter_options,
+        type: filter_record,
         categories,
     };
 };
