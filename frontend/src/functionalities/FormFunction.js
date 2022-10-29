@@ -36,4 +36,9 @@ export const filterRecord = (categories) => {
 export const monthly_chart = 'monthly_chart';
 export const chartDisplay = () => {
     return { type: monthly_chart};
-}
+};
+
+export const pay_records = 'pay_records';
+export const payRecords = (monthlyBudget, records) => {
+    return {type: pay_records, monthlyBudget, records};
+};

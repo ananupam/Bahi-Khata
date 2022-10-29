@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import PayRecords from './PayRecords';
 import { connect } from 'react-redux';
 import { addRecord } from '../functionalities/FormFunction';
 import moment from 'moment';
@@ -90,6 +91,7 @@ const AddRecord = React.memo((props) => {
                 </div>
                 </form>
             </div>
+            <PayRecords/>
             {/* to add the  monthly graph*/}
         </div>
     )

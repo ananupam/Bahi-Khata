@@ -1,6 +1,7 @@
 import Records from '../FormOperations/DummyRecords';
 import Categories from '../FormOperations/DummyCategories';
 import { add_record, edit_record, delete_record } from './FormFunction';
+import { pay_records } from './FormFunction';
 
 export const ReduceRecord = (state= Records, action) => {
     switch (action.type) {
@@ -26,6 +27,19 @@ export const ReduceRecord = (state= Records, action) => {
 
 export const ReduceCategories = ( state = Categories, action) => {
     switch (action.type) {
+        default:
+            return state;
+    }
+};
+
+export const ReducePayRecords = (state = [],action) => {
+    switch(action.type) {
+        case pay_records:
+            state = [];
+            action.records.sort((a ,b) => {
+                return b.amount-a.amount;
+            });
+            return state;
         default:
             return state;
     }
