@@ -1,14 +1,15 @@
-import Reducers from '../FormOperations/DummyRecords';
+import Records from '../FormOperations/DummyRecords';
+import Categories from '../FormOperations/DummyCategories';
 import { add_record, edit_record, delete_record } from './FormFunction';
 
-export const ReduceRecord = (state= Record, action) => {
+export const ReduceRecord = (state= Records, action) => {
     switch (action.type) {
         case add_record:
             return [...state,action.record];
         case delete_record:
             state.splice(
                 state.findIndex((record) => {
-                    record.id === action.id;
+                    return record.id === action.id;
                 }),
                 1
             );
@@ -21,4 +22,11 @@ export const ReduceRecord = (state= Record, action) => {
             return state;
 
     }
-}
+};
+
+export const ReduceCategories = ( state = Categories, action) => {
+    switch (action.type) {
+        default:
+            return state;
+    }
+};

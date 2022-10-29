@@ -33,3 +33,7 @@ export const filterRecord = (categories) => {
     };
 };
 
+export const monthly_chart = 'monthly_chart';
+export const chartDisplay = () => {
+    return { type: monthly_chart};
+}
