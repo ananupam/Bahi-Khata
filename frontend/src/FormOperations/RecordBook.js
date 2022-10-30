@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import DeleteRecord from './DeleteRecord'
 
 const RecordBook = React.memo((props) => {
     
@@ -25,6 +25,7 @@ const RecordBook = React.memo((props) => {
                                 <td>{record.amount}</td>
                                 <td>{record.category}</td>
                                 <td>{record.date}</td>
+                                <DeleteRecord record={record} />
                             </tr>
                         ))
                     }

@@ -7,12 +7,15 @@ import Button from '@mui/material/Button';
 const PayRecords = React.memo((props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log("here")
+        console.log(e.target)
+        console.log(e.target.monthlyBudget.value)
         props.payRecords(e.target.monthlyBudget.value, props.records);
     };
     return (
         <form className='PayRecordForm' onSubmit={handleSubmit}>
             <h2>PAY DUE BILLS</h2>
-            <TextField id='MonthlyBudget' type='number' name='MonthlyBudget'></TextField>
+            <input id='MonthlyBudget' type='number' name='MonthlyBudget' ></input>
             <Button id="MonthlyBudgetButton" type='submit'> Pay Bill</Button>
         </form>
     )
