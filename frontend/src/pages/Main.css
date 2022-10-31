@@ -44,3 +44,12 @@ body {
     font-size: 15px;
     padding-right: 10%;
 }
+
+.RecordBook_table table{
+    width:80%;
+}
+
+.RecordBook_table td {
+    text-align: left;
+    padding-left: 5%;
+  }

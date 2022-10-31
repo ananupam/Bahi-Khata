@@ -9,9 +9,12 @@ const DeleteRecord = React.memo((props) => {
         props.deleteRecord(props.record.id)
     
     }
+    return ( 
+        <div>
     <Button className='deleteRecordBtn' onClick={handleDeleteRecord}>DELETE
     </Button>
-
+    </div>
+)
 })
 
 const mapDispatchToProps = {
