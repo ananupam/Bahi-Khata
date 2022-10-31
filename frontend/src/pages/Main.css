@@ -16,7 +16,7 @@ body {
 
 
 .flexbox_addrecord{
-    background-image: url('/Users/anjalianupam/Desktop/project/Bahi-Khata/frontend/src/Images/mainImg.png');
+    background-image: url('https://github.com/ananupam/Bahi-Khata/blob/main/frontend/src/Images/mainImg.png');
     background-repeat:no-repeat;
     background-size:contain;
     background-position:center; 
