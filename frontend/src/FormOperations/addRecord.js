@@ -135,7 +135,7 @@ const AddRecord = React.memo((props) => {
             
             </div>
             <div
-				className='root form-container'
+				className='root form-container btn10'
 				style={{
 					padding: '0 20px',
 				}}>
@@ -143,7 +143,8 @@ const AddRecord = React.memo((props) => {
 					id='form-button'
 					variant='contained'
 					color='primary'
-					onClick={handleShowChart}>
+					onClick={handleShowChart}
+                    >
 					Get Time Series Chart
 				</Button>
 			</div>

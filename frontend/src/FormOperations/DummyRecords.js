@@ -45,7 +45,7 @@ const Records = [
         id: 7,
         description: "Vacation", 
         category: "Travel", 
-        amount: "3430", 
+        amount: 3430, 
         date: "01-18-2020"
         }
 ];

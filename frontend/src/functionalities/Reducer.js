@@ -40,6 +40,16 @@ export const ReducePayRecords = (state = [],action) => {
             action.records.sort((a ,b) => {
                 return b.amount-a.amount;
             });
+            
+            // state = action
+            
+            action.records.forEach((record) => {
+				if (record.amount <= action.monthlyBudget) {
+					action.monthlyBudget = action.monthlyBudget - record.amount;
+					state.push(record);
+				}
+			});
+            console.log(state,"rec")
             return state;
         default:
             return state;

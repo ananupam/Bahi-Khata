@@ -122,3 +122,17 @@ body {
 .filterContainer{
     margin-left: 44%;
 }
+
+.btn10{
+    visibility: hidden;
+}
+
+.tfoot_smellysocks{
+    background: grey;
+    padding: 10px;
+    padding-left: 2%;
+    font-size: 20px;
+    width: 25%;
+    color: white;
+    font-weight: 300;
+}

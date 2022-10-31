@@ -53,8 +53,8 @@ const RecordBook = React.memo((props) => {
                         
                     }
                 </tbody>
-                <tfoot>
-                    <tr>total</tr>
+                <tfoot className='tfoot_smellysocks'>
+                    <td>TOTAL:</td>
                     <td>{props.records.reduce((a, b) => {
 								return a + b['amount'];
 							}, 0)}</td>

@@ -1,20 +1,23 @@
 import React from 'react';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 import { Scatter } from 'react-chartjs-2';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import { Chart, registerables} from 'chart.js';
 
+import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
 
-const MonthlyChart = React.memo((props) => {
+const TimeSeriesPlot = React.memo((props) => {
 	const [data, setData] = React.useState([]);
 	React.useEffect(() => {
 		const temp = [];
 		props.records.map((record) =>
 			temp.push({
-				x: new Date(record.date),
-				y: record.amount,
-				desc: record.description,
+				name: record.date,
+				uv: record.amount,
+				pv: 2400,
+				amt: 2400
+				// desc: record.description,
 			})
 		);
 
@@ -26,50 +29,15 @@ const MonthlyChart = React.memo((props) => {
 	}, [props.records]);
 
 	return (
-		<div style={{ width: '80%', height: 400, padding:130 , ...props.style }}>
-			<Scatter
-				data={{
-					datasets: [
-						{
-							label: 'Records',
-							data: data,
-							showLine: true,
-							fill: false,
-							pointBorderWidth: 0,
-							pointBackgroundColor: '#7986cb',
-							pointBorderColor: '#7986cb',
-							borderColor: '#7986cb',
-							borderWidth: 2,
-						},
-					],
-				}}
-				options={{
-					maintainAspectRatio: false,
-					legend: {
-						display: false,
-					},
-					scales: {
-						xAxes: [
-							{
-								ticks: {
-									callback: function (value, index, values) {
-										return moment(new Date(value)).format(
-											'MM DD yyyy'
-										);
-									},
-								},
-							},
-						],
-					},
-					tooltips: {
-						callbacks: {
-							label: function (tooltipItem, data) {
-								return 'Amount: ' + tooltipItem.yLabel;
-							},
-						},
-					},
-				}}
-			/>
+		<div style={{ marginX:'10%', width: '100%', height: '50%',paddingLeft: '12%',  ...props.style }}>
+			
+			<LineChart width={800} height={400} data={data}>
+    <XAxis dataKey="name"/>
+    <YAxis/>
+    <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
+    <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+    <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
+  </LineChart>
 		</div>
 	);
 });
@@ -78,4 +46,4 @@ const mapStateToProps = (state) => ({
 	records: state.records,
 });
 
-export default connect(mapStateToProps)(MonthlyChart);
+export default connect(mapStateToProps)(TimeSeriesPlot);

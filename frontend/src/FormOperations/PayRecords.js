@@ -5,14 +5,14 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
 const PayRecords = React.memo((props) => {
+    const [monthlyBudget, setMonthlyBudget] = React.useState(0)
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        setMonthlyBudget(monthlyBudget)
         console.log("here")
-        console.log(e.target)
-        console.log(e.target.monthlyBudget.value)
-
-        props.payRecords(e.target.monthlyBudget.value, props.records);
+        console.log(monthlyBudget)
+        console.log(props)
+        props.payRecords(monthlyBudget, props.records);
     };
     return (
         <form className='PayRecordForm' 
@@ -25,6 +25,8 @@ const PayRecords = React.memo((props) => {
                 label='Budget' 
                 type='number' 
                 name='MonthlyBudget' 
+                value={monthlyBudget}
+                onChange = { (e) => {setMonthlyBudget(e.target.value)} }
                 style={{ width: '60%',padding: 10 }}>
             </TextField>
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useCallback}  from 'react';
 import { connect } from 'react-redux';
 
 import { filterRecord } from '../functionalities/FormFunction';
@@ -13,19 +13,27 @@ import Button from '@mui/material/Button';
 const FilterRecord= React.memo((props) => {
     const [category,setCategory] = React.useState([]);
 
-    const handleApplyFilter = (e) => {
+    const handleApplyFilter = useCallback(
+	  (e) => {
 		console.log('in handleApplyFilter')
 		console.log(props)
-        setCategory(e.target.value);
-        props.filterRecord(e.target.values)
+		let val = e.target.value
+		console.log(val)
+		console.log(val,"categories")
+		setCategory(e.target.value);
+		console.log(e.target.value,"categories")
+        props.filterRecord(e.target.value)
 		console.log('out handleApplyFilter')
-    };
+	  },
+	  [category,props],
+	)
 
-    const handleRemoveFilter = () => {
+	const handleRemoveFilter = () => {
 		console.log('in handleRemoveFilter')
         setCategory([]);
         props.filterRecord([]);
     };
+
 
     return (
         <div className='filterList'>
