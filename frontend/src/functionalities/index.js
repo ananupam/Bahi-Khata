@@ -8,7 +8,7 @@ const allReducers = combineReducers({
     records: ReduceRecord,
     categories: ReduceCategories,
     payRecords: ReducePayRecords,
-    filterRecords: ReduceFilterCategories,
+    filterRecord: ReduceFilterCategories,
 });
 
 export default allReducers;

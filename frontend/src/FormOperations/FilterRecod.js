@@ -14,12 +14,15 @@ const FilterRecord= React.memo((props) => {
     const [category,setCategory] = React.useState([]);
 
     const handleApplyFilter = (e) => {
-		
+		console.log('in handleApplyFilter')
+		console.log(e.target)
         setCategory(e.target.value);
         props.filterRecord(e.target.values)
+		console.log('out handleApplyFilter')
     };
 
     const handleRemoveFilter = () => {
+		console.log('in handleRemoveFilter')
         setCategory([]);
         props.filterRecord([]);
     };
@@ -27,33 +30,30 @@ const FilterRecord= React.memo((props) => {
     return (
         <div className='filterList'>
             <div className='filterContainer'>
-                <div className='main_header'>
-                </div>
-                <div className='fliter option'>
-                    <FormControl id='filter-select'>
-                        <InputLabel id ='demo-mutiple-chip-label'>
+            
+                <div className='fliteroption'>
+                    <FormControl id='filter-select' sx={{ m: 1, minWidth: 200 }} >
+                        <InputLabel id ='demo-mutiple-chip-label'
+						style={{ minWidth: "max-content" , margin:10}}>
                             Filter Categories
                         </InputLabel>
                         <Select labelId='demo-mutiple-chip-label'
 							id='demo-mutiple-chip'
+							style={{ minWidth: "max-content" }}
 							multiple
 							value={category}
-							color='secondary'
 							onChange={handleApplyFilter}
                             input={<Input id='select-multiple-chip' />}
                             renderValue={(selected) => (
-                                <div style={{
-									margin: 2,
-									display: 'flex',
-									flexWrap: 'wrap',
-								}}>
+                                <div>
 									{selected.map((value) => (
 										<Chip
 											key={value}
 											name={value}
 											label={value}
 											style={{
-												margin: 2,
+												margin: 3,
+												width: 250,
 											}}
 										/>
 									))}
@@ -72,7 +72,14 @@ const FilterRecord= React.memo((props) => {
 								<MenuItem
 									key={categoryName.id}
 									value={categoryName.category}
-									>
+									style={{
+										fontWeight:
+											category.indexOf(categoryName) ===
+											-1
+												? 400
+												: 500,
+									}}>
+									
 									{categoryName.category}
 								</MenuItem>
 							))}
@@ -87,6 +94,7 @@ const FilterRecord= React.memo((props) => {
 					</Button>
                 </div>
             </div>
+			
         </div>
     )
 })

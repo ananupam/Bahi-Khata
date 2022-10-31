@@ -1,8 +1,9 @@
 import Records from '../FormOperations/DummyRecords';
 import Categories from '../FormOperations/DummyCategories';
-import { add_record, edit_record, delete_record, filterRecord } from './FormFunction';
+import { add_record, edit_record, delete_record, filter_record } from './FormFunction';
 import { pay_records } from './FormFunction';
-import { filter_record } from './FormFunction';
+
+
 export const ReduceRecord = (state= Records, action) => {
     switch (action.type) {
         case add_record:

@@ -14,7 +14,6 @@ const PayRecords = React.memo((props) => {
     };
     return (
         <form className='PayRecordForm' onSubmit={handleSubmit}>
-            <h2>PAY DUE BILLS</h2>
             <input id='MonthlyBudget' type='number' name='MonthlyBudget' ></input>
             <Button id="MonthlyBudgetButton" type='submit'> Pay Bill</Button>
         </form>

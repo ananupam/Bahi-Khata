@@ -51,6 +51,9 @@ const AddRecord = React.memo((props) => {
 
     return(
         <div className='addRecord'>
+            <div className='payrecord_section'>
+            <PayRecords/>
+            </div>
             
             <div className='flexbox_addrecord'>
                 
@@ -123,7 +126,8 @@ const AddRecord = React.memo((props) => {
                 </form>
             
             </div>
-            <PayRecords/>
+            
+            
             {/* to add the  monthly graph*/}
         </div>
     )

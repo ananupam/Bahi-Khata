@@ -50,6 +50,7 @@ body {
     padding-left: 15%;
     font-size: 16px;
     margin-bottom: 20px;
+    
 }
 
 .RecordBook_table th,td{
@@ -60,11 +61,12 @@ body {
 
 .RecordBook_table th{
     background: grey;
-    padding: 8px;
+    padding: 10px;
     padding-left: 2%;
     font-size: 20px;
     width: 25%;
     color: white;
+    font-weight: 300;
 }
 .RecordBook_table td {
     text-align: left;
@@ -75,7 +77,7 @@ body {
 .deleteRecord Button{
     padding: 8px;
     font-size: 12px;
-    background: #6ea066;
+    background: rgb(119, 110, 110);
     
     color: white;
 }
@@ -87,4 +89,36 @@ body {
     margin-left: 20px;
     background: #d1e3b1;
     color: rgb(119, 110, 110);
+}
+
+.PayRecordForm{
+    padding-left: 15%;
+    
+}
+
+.PayRecordForm Button{
+    
+    padding: 8px;
+    font-size: 15px;
+    background: rgb(119, 110, 110);
+    color: white;
+    margin-left: 2%;
+}
+
+.PayRecordForm input{
+    font-size: 15px;
+    padding: 1%;
+}
+
+.filterContainer Button{
+
+    font-size: 12px;
+    border: 1px solid rgb(119, 110, 110);
+    background-color: white;
+    color: rgb(119, 110, 110);
+    margin-top: 18px;
+}
+
+.filterContainer{
+    margin-left: 44%;
 }

@@ -22,8 +22,8 @@ const RecordBook = React.memo((props) => {
                 <tbody>
                     {props.records
                         .filter((record) => 
-                        props.filterRecords.length !==0
-                            ? props.filterRecords.includes(
+                        props.filterRecord.length !==0
+                            ? props.filterRecord.includes(
                                 record.category
                             )
                             : props.records
@@ -50,7 +50,7 @@ const RecordBook = React.memo((props) => {
 const mapStateToProps = (state) => ({
 	records: state.records,	
     payRecords: state.payRecords,
-    filterRecords: state.filterRecords,
+    filterRecord: state.filterRecord,
 });
 
 export default connect(mapStateToProps)(RecordBook);
