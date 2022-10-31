@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import RecordBook from '../FormOperations/RecordBook';
-import AddRecord from '../FormOperations/AddRecord';
+import AddRecord from '../FormOperations/addRecord';
 import FilterRecord from '../FormOperations/FilterRecod';
 import MonthlyChart from '../FormOperations/MonthlyChart';
 import './Main.css';

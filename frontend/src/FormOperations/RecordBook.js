@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import DeleteRecord from './DeleteRecord';
+import DeleteRecord from './deleteRecord';
 import EditRecord from './EditRecord';
 import '../pages/Main.css';
 import moment from 'moment';
