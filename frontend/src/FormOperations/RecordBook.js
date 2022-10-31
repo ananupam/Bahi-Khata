@@ -4,6 +4,7 @@ import DeleteRecord from './DeleteRecord';
 import EditRecord from './EditRecord';
 import '../pages/Main.css';
 
+
 const RecordBook = React.memo((props) => {
     
 
@@ -29,7 +30,13 @@ const RecordBook = React.memo((props) => {
                             : props.records
                         )
                         .map((record)=> (
-                            <tr key={record.id}>
+                            <tr key={record.id} style={{
+                                backgroundColor:
+                                    props.payRecords.includes(record) ===
+                                    true
+                                        ? '#eeeeee'
+                                        : '#fff',
+                            }}>
                                 <td>{record.description}</td>
                                 <td>{record.amount}</td>
                                 <td>{record.category}</td>
@@ -42,6 +49,13 @@ const RecordBook = React.memo((props) => {
                         
                     }
                 </tbody>
+                <tfoot>
+                    <tr>total</tr>
+                    <td>{props.records.reduce((a, b) => {
+								return a + b['amount'];
+							}, 0)}</td>
+                    <td>Minimum Number of Bills: {props.payRecords.length}</td>
+                </tfoot>
             </table>
         </div>
     )

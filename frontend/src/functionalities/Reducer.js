@@ -47,6 +47,8 @@ export const ReducePayRecords = (state = [],action) => {
 };
 
 export const ReduceFilterCategories = (state = [], action) => {
+    console.log('action')
+    console.log(action)
 	switch (action.type) {
 		case filter_record:
 			state = [...action.categories];

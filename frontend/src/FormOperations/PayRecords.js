@@ -7,25 +7,42 @@ import Button from '@mui/material/Button';
 const PayRecords = React.memo((props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
+
         console.log("here")
         console.log(e.target)
         console.log(e.target.monthlyBudget.value)
+
         props.payRecords(e.target.monthlyBudget.value, props.records);
     };
     return (
-        <form className='PayRecordForm' onSubmit={handleSubmit}>
-            <input id='MonthlyBudget' type='number' name='MonthlyBudget' ></input>
-            <Button id="MonthlyBudgetButton" type='submit'> Pay Bill</Button>
+        <form className='PayRecordForm' 
+        noValidate
+        autoComplete='off'
+        onSubmit={handleSubmit}>
+            <div>
+            <TextField 
+                id='standard-secondary' 
+                label='Budget' 
+                type='number' 
+                name='MonthlyBudget' 
+                style={{ width: '60%' }}>
+            </TextField>
+
+            <Button 
+                id="budget-form-button" 
+                variant='contained'
+                type='submit'> Pay Bill</Button>
+            </div>
         </form>
     )
 });
 
 const mapStateToProps = (state) => ({
-	bills: state.records,
+	records: state.records,
 });
 
 const mapDispatchToProps = {
-	PayRecords,
+	payRecords,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PayRecords);

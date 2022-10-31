@@ -15,7 +15,7 @@ const FilterRecord= React.memo((props) => {
 
     const handleApplyFilter = (e) => {
 		console.log('in handleApplyFilter')
-		console.log(e.target)
+		console.log(props)
         setCategory(e.target.value);
         props.filterRecord(e.target.values)
 		console.log('out handleApplyFilter')
@@ -51,11 +51,9 @@ const FilterRecord= React.memo((props) => {
 											key={value}
 											name={value}
 											label={value}
-											style={{
-												margin: 3,
-												width: 250,
-											}}
+											
 										/>
+
 									))}
 								</div>
                             )}
@@ -71,15 +69,7 @@ const FilterRecord= React.memo((props) => {
 							{props.categories.map((categoryName) => (
 								<MenuItem
 									key={categoryName.id}
-									value={categoryName.category}
-									style={{
-										fontWeight:
-											category.indexOf(categoryName) ===
-											-1
-												? 400
-												: 500,
-									}}>
-									
+									value={categoryName.category}>
 									{categoryName.category}
 								</MenuItem>
 							))}

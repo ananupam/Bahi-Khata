@@ -19,7 +19,9 @@ const EditRecord = React.memo((props) => {
 	const [category, setCategory] = React.useState(props.record.category);
 
     const handleEditRecord = (e) => {
-        setRecord({...record, [e.target.name]: e.target.value,})
+        setRecord({
+            ...record, 
+            [e.target.name]: e.target.value,});
     };
 
     const handleOpen = () => {
