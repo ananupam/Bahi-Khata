@@ -11,7 +11,8 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-
+//import mainImg from '../Images/mainImg.png'
+import '../pages/Main.css'
 
 const AddRecord = React.memo((props) => {
     const [category, setCategory] = React.useState('');
@@ -40,9 +41,9 @@ const AddRecord = React.memo((props) => {
         setCategory('');
         e.target.description.value = null;
         
-        //e.target.description.InputLabelProps = {
-            //shrink: false,
-        //};
+        e.target.description.InputLabelProps = {
+            shrink: false,
+        };
         
     };
 
@@ -50,21 +51,25 @@ const AddRecord = React.memo((props) => {
 
     return(
         <div className='addRecord'>
-            <div>
-
-            <form className='root form-container'
+            
+            <div className='flexbox_addrecord'>
+                
+                {/*<li><img className='addrecord_main'src={mainImg}></img></li>*/}
+                
+                <form className='addRecord_formContainer'
 					noValidate
 					autoComplete='off'
 					onSubmit={handleRecordAdding} >
-                <h2> ADD RECORD</h2>
                 
-                <div>
+                
+                    <div className='addRecord_texts'>
                     <TextField 
                     label="Amount"
                     name="amount"
                     type='number'
+                    style={{ width: '30%' }}
                     />
-
+                    
                     <TextField 
                         id="Date" 
                         label="Date"
@@ -99,21 +104,24 @@ const AddRecord = React.memo((props) => {
                             ))}
                         </Select>
                     </FormControl>
-                </div>
-
-
-                <div>
-                    <TextField label="Description"
-                     variant="standard" 
-                     type="text" 
-                     name="description"
+                    
+                    </div>
+                
+                    
+                    <div>
+                        <TextField label="Description"
+                        type="text" 
+                        name="description"
+                        style={{ width: '90%'}}
                      />
-                </div>
+                     </div>
 
-                <div className='appendRecordBtn'>
-                    <Button variant='contained' type='submit'>ADD RECORD </Button>
-                </div>
-            </form>
+                    <div className='appendRecordBtn'>
+                        <Button variant='contained' type='submit'>ADD RECORD </Button>
+                    </div>
+            
+                </form>
+            
             </div>
             <PayRecords/>
             {/* to add the  monthly graph*/}

@@ -28,7 +28,6 @@ const FilterRecord= React.memo((props) => {
         <div className='filterList'>
             <div className='filterContainer'>
                 <div className='main_header'>
-                    <h1>BAHI_KHATA</h1>
                 </div>
                 <div className='fliter option'>
                     <FormControl id='filter-select'>

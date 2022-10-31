@@ -1,0 +1,46 @@
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.banner_img{
+    width: 100%;
+    height:60%;
+    object-fit: cover;
+}
+
+
+.flexbox_addrecord{
+    background-image: url('/Users/anjalianupam/Desktop/project/Bahi-Khata/frontend/src/Images/mainImg.png');
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center; 
+    height: 90%;
+    width: 60%;
+    padding-left: 42%;
+    
+}
+
+.flexbox_addrecord{
+    padding-top: 10%;
+    padding-bottom: 10%;
+    
+}
+
+.addRecord_formContainer Button{
+    margin-top: 5%;
+    background: #545454;
+    font-size: 15px;
+    padding: 6%;
+}
+
+.appendRecordBtn{
+    padding-left: 76%;
+    font-size: 15px;
+    padding-right: 10%;
+}
