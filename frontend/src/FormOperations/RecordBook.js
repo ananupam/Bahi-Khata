@@ -3,11 +3,13 @@ import { connect } from 'react-redux';
 import DeleteRecord from './DeleteRecord';
 import EditRecord from './EditRecord';
 import '../pages/Main.css';
+import moment from 'moment';
 
 
 const RecordBook = React.memo((props) => {
     
-
+    console.log('props check')
+    console.log(props)
     return (
         <div className='RecordBook_table'>
             
@@ -40,7 +42,9 @@ const RecordBook = React.memo((props) => {
                                 <td>{record.description}</td>
                                 <td>{record.amount}</td>
                                 <td>{record.category}</td>
-                                <td>{record.date}</td>
+                                <td>{moment(new Date(record.date)).format(
+											'DD MMM yyyy'
+										)}</td>
                                 
                                 <td><EditRecord record={record} /></td>
                                 <td><DeleteRecord record={record} /></td>

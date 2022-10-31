@@ -33,8 +33,9 @@ const FilterRecord= React.memo((props) => {
             
                 <div className='fliteroption'>
                     <FormControl id='filter-select' sx={{ m: 1, minWidth: 200 }} >
-                        <InputLabel id ='demo-mutiple-chip-label'
-						style={{ minWidth: "max-content" , margin:10}}>
+                        <InputLabel 
+						id ='demo-mutiple-chip-label'
+						>
                             Filter Categories
                         </InputLabel>
                         <Select labelId='demo-mutiple-chip-label'
@@ -84,7 +85,7 @@ const FilterRecord= React.memo((props) => {
 					</Button>
                 </div>
             </div>
-			
+			<div style={{ flex: 1.25, margin: 10 }}></div>
         </div>
     )
 })

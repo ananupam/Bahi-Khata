@@ -2,7 +2,7 @@ import Records from '../FormOperations/DummyRecords';
 import Categories from '../FormOperations/DummyCategories';
 import { add_record, edit_record, delete_record, filter_record } from './FormFunction';
 import { pay_records } from './FormFunction';
-
+import { show_chart } from './FormFunction';
 
 export const ReduceRecord = (state= Records, action) => {
     switch (action.type) {
@@ -55,5 +55,15 @@ export const ReduceFilterCategories = (state = [], action) => {
 			return state;
 		default:
 			return state;
+	}
+};
+
+const initialState = true;
+export const ShowChartReducer = (state = initialState, action) => {
+	switch (action.type) {
+		case show_chart:
+			return true;
+		default:
+			return true;
 	}
 };

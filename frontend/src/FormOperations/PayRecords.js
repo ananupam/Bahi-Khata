@@ -25,7 +25,7 @@ const PayRecords = React.memo((props) => {
                 label='Budget' 
                 type='number' 
                 name='MonthlyBudget' 
-                style={{ width: '60%' }}>
+                style={{ width: '60%',padding: 10 }}>
             </TextField>
 
             <Button 

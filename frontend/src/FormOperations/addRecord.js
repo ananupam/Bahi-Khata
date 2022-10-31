@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import PayRecords from './PayRecords';
+import { changeChartVisibility } from '../functionalities/FormFunction';
 import { connect } from 'react-redux';
 import { addRecord } from '../functionalities/FormFunction';
 import moment from 'moment';
@@ -46,6 +47,13 @@ const AddRecord = React.memo((props) => {
         };
         
     };
+
+    const handleShowChart = (event) => {
+		event.preventDefault();
+        console.log("in handle show chart visibility")
+		props.changeChartVisibility();
+        console.log("out handleshow chart visibility")
+	};
 
     //addition
 
@@ -126,6 +134,19 @@ const AddRecord = React.memo((props) => {
                 </form>
             
             </div>
+            <div
+				className='root form-container'
+				style={{
+					padding: '0 20px',
+				}}>
+				<Button
+					id='form-button'
+					variant='contained'
+					color='primary'
+					onClick={handleShowChart}>
+					Get Time Series Chart
+				</Button>
+			</div>
             
             
             {/* to add the  monthly graph*/}
@@ -141,7 +162,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
 	addRecord,
-	//changeChartVisibility,
+	changeChartVisibility,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddRecord);

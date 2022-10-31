@@ -33,12 +33,14 @@ export const filterRecord = (categories) => {
     };
 };
 
-export const monthly_chart = 'monthly_chart';
-export const chartDisplay = () => {
-    return { type: monthly_chart};
-};
-
 export const pay_records = 'pay_records';
 export const payRecords = (monthlyBudget, records) => {
     return {type: pay_records, monthlyBudget, records};
+};
+
+export const show_chart = 'show_chart';
+
+export const changeChartVisibility = () => {
+    console.log('in change chart visible')
+	return { type: show_chart };
 };

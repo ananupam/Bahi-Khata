@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import RecordBook from '../FormOperations/RecordBook';
 import AddRecord from '../FormOperations/AddRecord';
 import FilterRecord from '../FormOperations/FilterRecod';
+import MonthlyChart from '../FormOperations/MonthlyChart';
 import './Main.css';
 import banner from '../Images/banner.png'
 const Main = React.memo((props) => {
@@ -11,6 +12,11 @@ const Main = React.memo((props) => {
             <img className='banner_img' src={banner}></img>
             
             <div>
+            {props.showChart === true ? (
+					<MonthlyChart style={{ flex: 2, margin: 10 }} />
+				) : (
+					<MonthlyChart style={{ flex: 2, margin: 10 }} />
+				)}
                 <FilterRecord />
                 <RecordBook/>
                 <AddRecord/>
