@@ -3,6 +3,7 @@ import { ReduceCategories } from "./Reducer";
 import { combineReducers } from 'redux';
 import { ReducePayRecords } from "./Reducer";
 import { ReduceFilterCategories } from "./Reducer";
+
 const allReducers = combineReducers({
     records: ReduceRecord,
     categories: ReduceCategories,

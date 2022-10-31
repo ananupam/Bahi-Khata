@@ -8,6 +8,7 @@ import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
+import '../pages/Main.css';
 
 import { editRecord } from '../functionalities/FormFunction';
 
@@ -52,6 +53,7 @@ const EditRecord = React.memo((props) => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                
             }}>
             <div className='editRecord_form'>
             <form className='editRecord_formContainer'

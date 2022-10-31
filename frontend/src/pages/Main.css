@@ -47,9 +47,44 @@ body {
 
 .RecordBook_table table{
     width:80%;
+    padding-left: 15%;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
+.RecordBook_table th,td{
+    text-align: left;
+    padding-left: 2%;
+    
+}
+
+.RecordBook_table th{
+    background: grey;
+    padding: 8px;
+    padding-left: 2%;
+    font-size: 20px;
+    width: 25%;
+    color: white;
+}
 .RecordBook_table td {
     text-align: left;
-    padding-left: 5%;
+    
+    
   }
+
+.deleteRecord Button{
+    padding: 8px;
+    font-size: 12px;
+    background: #6ea066;
+    
+    color: white;
+}
+
+.editRecord Button{
+    padding: 8px;
+    font-size: 12px;
+    margin-right: 8px;
+    margin-left: 20px;
+    background: #d1e3b1;
+    color: rgb(119, 110, 110);
+}
